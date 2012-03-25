@@ -874,7 +874,7 @@ void MainWindow::on_comboBox_oclhcplus_attack_currentIndexChanged(int index)
 void MainWindow::oclhcplus_update_view_attack_mode()
 {
     int attackMode = oclhcplus_attackModes.key(ui->comboBox_oclhcplus_attack->currentText());
-    bool groupWordlists = false, groupRules = false, groupPassword = false, groupBruteForce = false, groupMask = false;
+    bool groupWordlists = false, groupRules = false, groupPassword = false, groupMask = false;
 
     switch(attackMode) {
     case 0:
@@ -882,7 +882,6 @@ void MainWindow::oclhcplus_update_view_attack_mode()
         groupWordlists = true;
         groupRules = true;
         groupPassword = false;
-        groupBruteForce = false;
         groupMask = false;
         break;
     case 1:
@@ -890,7 +889,6 @@ void MainWindow::oclhcplus_update_view_attack_mode()
         groupWordlists = true;
         groupRules = false;
         groupPassword = false;
-        groupBruteForce = false;
         groupMask = false;
         break;
     case 3:
@@ -898,7 +896,6 @@ void MainWindow::oclhcplus_update_view_attack_mode()
         groupWordlists = false;
         groupRules = false;
         groupPassword = false;
-        groupBruteForce = true;
         groupMask = true;
         break;
     case 4:
@@ -906,7 +903,6 @@ void MainWindow::oclhcplus_update_view_attack_mode()
         groupWordlists = true;
         groupRules = false;
         groupPassword = true;
-        groupBruteForce = false;
         groupMask = false;
         break;
     case 6:
@@ -915,7 +911,6 @@ void MainWindow::oclhcplus_update_view_attack_mode()
         groupWordlists = true;
         groupRules = false;
         groupPassword = false;
-        groupBruteForce = false;
         groupMask = true;
         break;
     }
