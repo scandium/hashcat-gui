@@ -1,0 +1,33 @@
+If you implement any of these features please remove it
+from this list and in case it was suggested by someone
+else give proper credit in the ChangeLog file!
+
+- rework layout: over time so many options have been added and the GUI started
+to mostly grow in height instead of width taking up too much vertical screen space
+
+- All file chooser dialogs: save last folder (suggested by boris_)
+
+- remember hardware device choice (suggested by K9_)
+
+- restore settings on restart (suggested by K9_)
+
+- make path to hashcat directory configurable
+
+- export current settings with ability to important them again (suggested by teamakg)
+
+- quick paste hashes (suggested by blandyuk)
+
+- allow terminal to be configurable to allow more than just the currently
+hardcoded terminal
+
+- oclHashcat-lite has different maximum password lengths depending on the
+hash type. The GUI should dynamically change the maximum allowed value
+for that field depending on the currently selected hash type.
+(see oclHashcat-lite "changes v0.05 -> v0.06" for a list)
+
+- oclHashcat-plus: integrate hccap converter for WPA2 into the GUI.
+See if we can use the converter inside the GUI using an appropriate
+http request instead of just opening the web page
+
+- remove code duplication: There are currently a few copy&paste code
+structures that could easily be made cleaner and more robust by refactoring them

@@ -1,0 +1,25 @@
+To build hashcat-gui either
+
+1. Download the Qt SDK from http://qt-project.org/
+2. Open hashcat-gui.pro in Qt Creator
+3. Click "Run"
+
+OR
+
+1. Download the Qt libraries from http://qt-project.org/
+2. Build the Qt libraries:
+
+	[Windows using Microsoft Windows SDK]
+	setenv /release /[x86/x64]
+	configure -release [-static]
+	nmake sub-src
+
+	[Linux]
+	./configure -release [-static]
+	make
+
+	Use "-static" if you want to statically link Qt into hashcat-gui, you can
+	run the hashcat-gui executable without having any Qt libraries around then.
+	This is how hashcat-gui releases available on the hashcat website are built.
+
+3. Build hashcat-gui: qmake -config release && make

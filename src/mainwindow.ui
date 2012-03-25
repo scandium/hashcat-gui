@@ -1,0 +1,4811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>715</width>
+    <height>1066</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>hashcat-gui</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/icon_hashcat.png</normaloff>:/images/icon_hashcat.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget_main">
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab_hc">
+       <attribute name="title">
+        <string>hashcat</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_23">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="label_hc_hashfile">
+            <property name="text">
+             <string>Hash file:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_hc_open_hashfile">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_hc_open_hashfile">
+            <property name="text">
+             <string>Open...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QCheckBox" name="checkBox_hc_remove">
+            <property name="text">
+             <string>Remove hash from hash list once it is cracked</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_hc_separator">
+            <property name="text">
+             <string>Separator:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_hc_separator">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>:</string>
+            </property>
+            <property name="maxLength">
+             <number>1</number>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_hc_wordlists">
+          <property name="title">
+           <string>Word lists</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_46">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <item>
+                <widget class="QToolButton" name="toolButton_hc_wordlist_sort_asc">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="toolTip">
+                  <string>Move item up</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="autoRaise">
+                  <bool>true</bool>
+                 </property>
+                 <property name="arrowType">
+                  <enum>Qt::UpArrow</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_hc_wordlist_sort_desc">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="toolTip">
+                  <string>Move item down</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="autoRaise">
+                  <bool>true</bool>
+                 </property>
+                 <property name="arrowType">
+                  <enum>Qt::DownArrow</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_hc_add_wordlist">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Add files...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_hc_add_wordlist_folder">
+               <property name="text">
+                <string>Add folder...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_hc_remove_wordlist">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Remove</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QListWidget" name="listWidget_hc_wordlist">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>160</height>
+              </size>
+             </property>
+             <property name="acceptDrops">
+              <bool>true</bool>
+             </property>
+             <property name="dragDropMode">
+              <enum>QAbstractItemView::DropOnly</enum>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::ExtendedSelection</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_hc_mode">
+            <property name="text">
+             <string>Mode:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_hc_attack">
+            <property name="currentIndex">
+             <number>-1</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_hc_hash">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Hash type:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_hc_hash"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_hc_saltfile">
+          <property name="title">
+           <string>Salt file</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_16">
+             <item>
+              <widget class="QCheckBox" name="checkBox_hc_saltfile">
+               <property name="text">
+                <string>Salt file:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_15">
+               <item>
+                <widget class="QLineEdit" name="lineEdit_hc_open_saltfile">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_hc_open_saltfile">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Open...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="QGroupBox" name="groupBox_hc_rules">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Rules (hybrid attack)</string>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_36">
+               <item>
+                <widget class="QRadioButton" name="radioButton_hc_rules_none">
+                 <property name="text">
+                  <string>None</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup_hc_rules</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_hc_open_rulesfile">
+                     <property name="text">
+                      <string>Use file:</string>
+                     </property>
+                     <attribute name="buttonGroup">
+                      <string notr="true">buttonGroup_hc_rules</string>
+                     </attribute>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="pushButton_hc_open_rulesfile">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="text">
+                      <string>Open...</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_hc_open_rulesfile">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="readOnly">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_hc_rules_generated">
+                   <property name="text">
+                    <string>Generate rules:</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup_hc_rules</string>
+                   </attribute>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_hc_rules">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="prefix">
+                    <string/>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>1000000</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_6">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_hc_toggle">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Toggle-Case settings</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_33">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_32">
+                 <item>
+                  <widget class="QLabel" name="label_hc_toggle_number">
+                   <property name="text">
+                    <string>Number of alphas in plain:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QSpinBox" name="spinBox_hc_toggle_min">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>99</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_hc_toggle_to">
+                     <property name="text">
+                      <string>-</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="spinBox_hc_toggle_max">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>16</number>
+                     </property>
+                     <property name="value">
+                      <number>16</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QGroupBox" name="groupBox_hc_bruteforce">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Brute-Force settings</string>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox_hc_custom_charset">
+                 <property name="title">
+                  <string>Custom charsets</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_12">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_67">
+                    <item>
+                     <widget class="QCheckBox" name="checkBox_hc_custom1">
+                      <property name="text">
+                       <string>Charset 1:</string>
+                      </property>
+                      <property name="checked">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_hc_custom1">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_72">
+                    <item>
+                     <widget class="QCheckBox" name="checkBox_hc_custom2">
+                      <property name="text">
+                       <string>Charset 2:</string>
+                      </property>
+                      <property name="checked">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_hc_custom2">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_73">
+                    <item>
+                     <widget class="QCheckBox" name="checkBox_hc_custom3">
+                      <property name="text">
+                       <string>Charset 3:</string>
+                      </property>
+                      <property name="checked">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_hc_custom3">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_74">
+                    <item>
+                     <widget class="QCheckBox" name="checkBox_hc_custom4">
+                      <property name="text">
+                       <string>Charset 4:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_hc_custom4">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_hc_mask">
+                 <property name="title">
+                  <string>Mask</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_9">
+                  <item row="0" column="0">
+                   <widget class="QLineEdit" name="lineEdit_hc_mask">
+                    <property name="toolTip">
+                     <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_22">
+            <item>
+             <widget class="QGroupBox" name="groupBox_hc_password">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Password length</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_35">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_34">
+                 <item>
+                  <widget class="QLabel" name="label_hc_password">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Length:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <item>
+                    <widget class="QSpinBox" name="spinBox_hc_password_min">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>16</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_hc_password_to">
+                     <property name="text">
+                      <string>-</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="spinBox_hc_password_max">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>16</number>
+                     </property>
+                     <property name="value">
+                      <number>16</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_hc_tablelookup">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Table-Lookup settings</string>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_28">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_24">
+                 <item>
+                  <widget class="QLabel" name="label_hc_tablelookup">
+                   <property name="text">
+                    <string>Table file:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_hc_open_tablefile">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="readOnly">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_hc_open_tablefile">
+                   <property name="text">
+                    <string>Open...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QGroupBox" name="groupBox_hc_resources">
+            <property name="title">
+             <string>Resources</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_17">
+             <item row="0" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <widget class="QLabel" name="label_hc_threads">
+                   <property name="text">
+                    <string>Threads:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_hc_segment">
+                   <property name="text">
+                    <string>Segment size:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_hc_skip">
+                   <property name="text">
+                    <string>Skip words:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_hc_limit">
+                   <property name="text">
+                    <string>Limit words:</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_hc_threads">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="value">
+                    <number>8</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_hc_segment">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="suffix">
+                    <string> MB</string>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>1024</number>
+                   </property>
+                   <property name="value">
+                    <number>32</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_hc_skip">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximum">
+                    <number>999999999</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_hc_limit">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="suffix">
+                    <string/>
+                   </property>
+                   <property name="maximum">
+                    <number>999999999</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_hc_output">
+            <property name="title">
+             <string>Output</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_20">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QCheckBox" name="checkBox_hc_potfile">
+                 <property name="text">
+                  <string>Do not write pot file</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBox_hc_outfile">
+                 <property name="text">
+                  <string>Write recovered hashes to file:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_61">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_hc_outfile">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>Built-in variables:
+
+  &lt;hash&gt; = current hash filename or hash
+  &lt;unixtime&gt; = current unix timestamp</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_hc_output">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Open...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_43">
+                 <item>
+                  <widget class="QLabel" name="label_hc_outfile_format">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="text">
+                    <string>Format:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_hc_outfile_format">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="currentIndex">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>hash:pass</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hash:hex_pass</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hash:pass:hex_pass</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_7">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_36">
+          <item>
+           <widget class="QPushButton" name="pushButton_hc_execute">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Start</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_hc_command">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_oclhcplus">
+       <attribute name="title">
+        <string>oclHashcat-plus [disabled]</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_13">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_27">
+          <item>
+           <widget class="QLabel" name="label_oclhcplus_hashfile">
+            <property name="text">
+             <string>Hash file or hash:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_oclhcplus_open_hashfile">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_oclhcplus_open_hashfile">
+            <property name="text">
+             <string>Open...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_65">
+          <item>
+           <widget class="QCheckBox" name="checkBox_oclhcplus_remove">
+            <property name="text">
+             <string>Remove hash from hash list once it is cracked</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_oclhcplus_ignoreusername">
+            <property name="text">
+             <string>Ignore username in hashfile</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_oclhcplus_wordlists">
+          <property name="title">
+           <string>Word lists</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_17">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_69">
+               <item>
+                <widget class="QToolButton" name="toolButton_oclhcplus_wordlist_sort_asc">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="toolTip">
+                  <string>Move item up</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="autoRaise">
+                  <bool>true</bool>
+                 </property>
+                 <property name="arrowType">
+                  <enum>Qt::UpArrow</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_oclhcplus_wordlist_sort_desc">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="toolTip">
+                  <string>Move item down</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="autoRaise">
+                  <bool>true</bool>
+                 </property>
+                 <property name="arrowType">
+                  <enum>Qt::DownArrow</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_oclhcplus_add_wordlist">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Add files...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_oclhcplus_add_wordlist_folder">
+               <property name="text">
+                <string>Add folder...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_oclhcplus_remove_wordlist">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Remove</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QListWidget" name="listWidget_oclhcplus_wordlist">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>160</height>
+              </size>
+             </property>
+             <property name="acceptDrops">
+              <bool>true</bool>
+             </property>
+             <property name="dragDropMode">
+              <enum>QAbstractItemView::DropOnly</enum>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::ExtendedSelection</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_29">
+          <item>
+           <widget class="QLabel" name="label_oclhcplus_mode">
+            <property name="text">
+             <string>Mode:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_oclhcplus_attack">
+            <property name="currentIndex">
+             <number>-1</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_oclhcplus_hash">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Hash type:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_oclhcplus_hash"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_17">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="QGroupBox" name="groupBox_oclhcplus_rules">
+              <property name="title">
+               <string>Rules</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_18">
+               <item>
+                <widget class="QRadioButton" name="radioButton_oclhcplus_use_rules_file">
+                 <property name="text">
+                  <string>Use rules files:</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_28">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhcplus_rulesfile_1">
+                   <property name="text">
+                    <string>Rules file:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_open_rulesfile_1">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="readOnly">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_oclhcplus_open_rulesfile_1">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Open...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_37">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhcplus_rulesfile_2">
+                   <property name="text">
+                    <string>Rules file:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_open_rulesfile_2">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="readOnly">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_oclhcplus_open_rulesfile_2">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Open...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_44">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhcplus_rulesfile_3">
+                   <property name="text">
+                    <string>Rules file:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_open_rulesfile_3">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="readOnly">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_oclhcplus_open_rulesfile_3">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Open...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_30">
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_oclhcplus_generate_rules">
+                   <property name="text">
+                    <string>Generate rules:</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhcplus_generate_rules">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="prefix">
+                    <string/>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>100000</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_oclhcplus_password">
+              <property name="title">
+               <string>Password length</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_14">
+               <item row="0" column="0">
+                <layout class="QHBoxLayout" name="horizontalLayout_66">
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_password">
+                   <property name="text">
+                    <string>Length:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhcplus_password_min">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>16</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_password_to">
+                   <property name="text">
+                    <string>-</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhcplus_password_max">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>16</number>
+                   </property>
+                   <property name="value">
+                    <number>16</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_14">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QCheckBox" name="checkBox_oclhcplus_hex_hash">
+              <property name="text">
+               <string>Assume charset is given in hex</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkBox_oclhcplus_hex_salt">
+              <property name="text">
+               <string>Assume salt is given in hex</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_oclhcplus_mask">
+              <property name="title">
+               <string>Mask</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_7">
+               <item row="0" column="0">
+                <widget class="QLineEdit" name="lineEdit_oclhcplus_mask">
+                 <property name="toolTip">
+                  <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_oclhcplus_custom_charset">
+              <property name="title">
+               <string>Custom charsets</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_9">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_64">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhcplus_custom1">
+                   <property name="text">
+                    <string>Charset 1:</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_custom1">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_68">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhcplus_custom2">
+                   <property name="text">
+                    <string>Charset 2:</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_custom2">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_70">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhcplus_custom3">
+                   <property name="text">
+                    <string>Charset 3:</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_custom3">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_71">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhcplus_custom4">
+                   <property name="text">
+                    <string>Charset 4:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_custom4">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_25">
+          <item>
+           <widget class="QGroupBox" name="groupBox_oclhcplus_resources">
+            <property name="title">
+             <string>Resources</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_12">
+             <item row="1" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_31">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_26">
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_cpu_affinity">
+                   <property name="text">
+                    <string>CPU affinity:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_devices">
+                   <property name="text">
+                    <string>GPU devices:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_accel">
+                   <property name="text">
+                    <string>GPU workload tuning:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_loops">
+                   <property name="text">
+                    <string>GPU loops:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_watchdog">
+                   <property name="text">
+                    <string>GPU watchdog:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_segment">
+                   <property name="text">
+                    <string>Segment size:</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_27">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_cpu_affinity">
+                   <property name="toolTip">
+                    <string>locks to CPU devices, seperate with comma</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_devices">
+                   <property name="toolTip">
+                    <string>devices to use, seperate with comma</string>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhcplus_accel">
+                   <property name="toolTip">
+                    <string>workload tuning: 1, 8, 40, 80, 160</string>
+                   </property>
+                   <property name="maximum">
+                    <number>999999999</number>
+                   </property>
+                   <property name="value">
+                    <number>8</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhcplus_loops">
+                   <property name="maximum">
+                    <number>999999999</number>
+                   </property>
+                   <property name="value">
+                    <number>256</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhcplus_watchdog">
+                   <property name="toolTip">
+                    <string>automatically abort session at NUM celsius</string>
+                   </property>
+                   <property name="maximum">
+                    <number>999999999</number>
+                   </property>
+                   <property name="value">
+                    <number>90</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhcplus_segment">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="suffix">
+                    <string> MB</string>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>1024</number>
+                   </property>
+                   <property name="value">
+                    <number>32</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="checkBox_oclhcplus_async">
+               <property name="text">
+                <string>Use non-blocking async calls</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_oclhcplus_output">
+            <property name="title">
+             <string>Output</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_25">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_16">
+               <item>
+                <widget class="QCheckBox" name="checkBox_oclhcplus_outfile">
+                 <property name="text">
+                  <string>Write recovered hashes to file:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_63">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhcplus_outfile">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>Built-in variables:
+
+  &lt;hash&gt; = current hash filename or hash
+  &lt;unixtime&gt; = current unix timestamp</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_oclhcplus_output">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Open...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_38">
+                 <item>
+                  <widget class="QLabel" name="label_oclhcplus_outfile_format">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="text">
+                    <string>Format:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_oclhcplus_outfile_format">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="currentIndex">
+                    <number>2</number>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>hash[:salt]</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hash[:salt]:plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hex_plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hash[:salt]:hex_plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>plain:hex_plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hash[:salt]:plain:hex_plain</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_12">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_42">
+          <item>
+           <widget class="QPushButton" name="pushButton_oclhcplus_execute">
+            <property name="text">
+             <string>Start</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_oclhcplus_command">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_oclhclite">
+       <attribute name="title">
+        <string>oclHashcat-lite [disabled]</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_47">
+          <item>
+           <widget class="QLabel" name="label_oclhclite_hash">
+            <property name="text">
+             <string>Hash:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_oclhclite_hash">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_19">
+          <item>
+           <widget class="QCheckBox" name="checkBox_oclhclite_mask">
+            <property name="text">
+             <string>Mask:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_oclhclite_mask">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_oclhclite_separator">
+            <property name="text">
+             <string>Separator:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_oclhclite_separator">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>:</string>
+            </property>
+            <property name="maxLength">
+             <number>1</number>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_59">
+          <item>
+           <widget class="QLabel" name="label_oclhclite_hash_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Hash type:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_oclhclite_hash"/>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_19">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <item>
+           <widget class="QGroupBox" name="groupBox_oclhclite_custom_charset">
+            <property name="title">
+             <string>Custom charsets</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_22">
+             <item row="0" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_54">
+               <item>
+                <widget class="QCheckBox" name="checkBox_oclhclite_custom1">
+                 <property name="text">
+                  <string>Charset 1:</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_oclhclite_custom1">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_55">
+               <item>
+                <widget class="QCheckBox" name="checkBox_oclhclite_custom2">
+                 <property name="text">
+                  <string>Charset 2:</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_oclhclite_custom2">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_56">
+               <item>
+                <widget class="QCheckBox" name="checkBox_oclhclite_custom3">
+                 <property name="text">
+                  <string>Charset 3:</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_oclhclite_custom3">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="3" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_57">
+               <item>
+                <widget class="QCheckBox" name="checkBox_oclhclite_custom4">
+                 <property name="text">
+                  <string>Charset 4:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_oclhclite_custom4">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>Built-in charsets:
+
+  ?l = abcdefghijklmnopqrstuvwxyz
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  ?d = 0123456789
+  ?s =  !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+  ?h = 8 bit characters from 0xc0 - 0xff
+  ?D = 8 bit characters from german alphabet
+  ?F = 8 bit characters from french alphabet
+  ?R = 8 bit characters from russian alphabet</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_oclhclite_attack_options">
+            <property name="title">
+             <string>Attack options</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_14">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_53">
+               <item>
+                <widget class="QLabel" name="label_oclhclite_password">
+                 <property name="text">
+                  <string>Length:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="spinBox_oclhclite_password_min">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimum">
+                  <number>1</number>
+                 </property>
+                 <property name="maximum">
+                  <number>15</number>
+                 </property>
+                 <property name="value">
+                  <number>1</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_oclhclite_password_to">
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="spinBox_oclhclite_password_max">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimum">
+                  <number>4</number>
+                 </property>
+                 <property name="maximum">
+                  <number>55</number>
+                 </property>
+                 <property name="value">
+                  <number>15</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_18">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_19">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhclite_skip">
+                   <property name="text">
+                    <string>Skip:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhclite_limit">
+                   <property name="text">
+                    <string>Limit:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhclite_skip_plain">
+                   <property name="text">
+                    <string>Skip plain:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_oclhclite_limit_plain">
+                   <property name="text">
+                    <string>Limit plain:</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_21">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhclite_skip">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>start cracking at NUM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhclite_limit">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>abort cracking at NUM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhclite_skip_plain">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>start cracking at STR</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhclite_limit_plain">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>abort cracking at STR</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkBox_oclhclite_hex_hash">
+               <property name="text">
+                <string>Assume charset is given in hex</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkBox_oclhclite_hex_salt">
+               <property name="text">
+                <string>Assume salt is given in hex</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_52">
+          <item>
+           <widget class="QGroupBox" name="groupBox_oclhclite_resources">
+            <property name="title">
+             <string>Resources</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_20">
+             <item row="1" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_51">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_30">
+                 <item>
+                  <widget class="QLabel" name="label_oclhclite_cpu_affinity">
+                   <property name="text">
+                    <string>CPU affinity:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhclite_devices">
+                   <property name="text">
+                    <string>GPU devices:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhclite_accel">
+                   <property name="text">
+                    <string>GPU workload tuning:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhclite_loops">
+                   <property name="text">
+                    <string>GPU loops:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_oclhclite_watchdog">
+                   <property name="text">
+                    <string>GPU watchdog:</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_31">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhclite_cpu_affinity">
+                   <property name="toolTip">
+                    <string>locks to CPU devices, seperate with comma</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhclite_devices">
+                   <property name="toolTip">
+                    <string>devices to use, seperate with comma</string>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhclite_accel">
+                   <property name="toolTip">
+                    <string>workload tuning: 1, 8, 40, 80, 160, 400 or 800</string>
+                   </property>
+                   <property name="maximum">
+                    <number>999999999</number>
+                   </property>
+                   <property name="value">
+                    <number>8</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhclite_loops">
+                   <property name="maximum">
+                    <number>999999999</number>
+                   </property>
+                   <property name="value">
+                    <number>256</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_oclhclite_watchdog">
+                   <property name="toolTip">
+                    <string>automatically abort session at NUM celsius</string>
+                   </property>
+                   <property name="maximum">
+                    <number>999999999</number>
+                   </property>
+                   <property name="value">
+                    <number>90</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="checkBox_oclhclite_async">
+               <property name="text">
+                <string>Use non-blocking async calls</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_oclhclite_output">
+            <property name="title">
+             <string>Output</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_29">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <item>
+                <widget class="QCheckBox" name="checkBox_oclhclite_outfile">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>Write recovered hashes to file:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_62">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_oclhclite_outfile">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>Built-in variables:
+
+  &lt;hash&gt; = current hash filename or hash
+  &lt;unixtime&gt; = current unix timestamp</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_oclhclite_output">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Open...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_50">
+                 <item>
+                  <widget class="QLabel" name="label_oclhclite_outfile_format">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="text">
+                    <string>Format:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_oclhclite_outfile_format">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="currentIndex">
+                    <number>2</number>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>hash[:salt]</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hash[:salt]:plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hex_plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hash[:salt]:hex_plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>plain:hex_plain</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>hash[:salt]:plain:hex_plain</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_17">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_60">
+          <item>
+           <widget class="QPushButton" name="pushButton_oclhclite_execute">
+            <property name="text">
+             <string>Start</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_oclhclite_command">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>715</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHashcat_EULA"/>
+    <addaction name="actionOclHashcatPlus_EULA"/>
+    <addaction name="actionOclHashcatLite_EULA"/>
+    <addaction name="separator"/>
+    <addaction name="actionHelp_About"/>
+   </widget>
+   <widget class="QMenu" name="menuAction">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionReset_fields"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAction"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <action name="actionHelp_About">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionReset_fields">
+   <property name="text">
+    <string>Reset fields</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionHashcat_EULA">
+   <property name="text">
+    <string>hashcat EULA</string>
+   </property>
+  </action>
+  <action name="actionOclHashcatPlus_EULA">
+   <property name="text">
+    <string>oclHashcat-plus EULA</string>
+   </property>
+   <property name="toolTip">
+    <string>oclHashcat-plus EULA</string>
+   </property>
+  </action>
+  <action name="actionOclHashcatLite_EULA">
+   <property name="text">
+    <string>oclHashcat-lite EULA</string>
+   </property>
+   <property name="toolTip">
+    <string>oclHashcat-lite EULA</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>lineEdit_hc_open_hashfile</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_hc_remove</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_separator</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_open_saltfile</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>451</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>390</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_hc_rules_none</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>528</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_open_rulesfile</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>602</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>540</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_hc_rules_generated</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>637</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>576</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_rules</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>639</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>610</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_toggle_min</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>615</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>642</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_toggle_max</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>687</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>673</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_open_tablefile</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>742</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>586</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_hc_outfile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>673</x>
+     <y>886</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>669</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_outfile</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>586</x>
+     <y>923</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>715</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_hc_outfile_format</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>598</x>
+     <y>963</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>760</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_threads</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>314</x>
+     <y>860</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>713</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_segment</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>314</x>
+     <y>895</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>749</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_skip</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>314</x>
+     <y>930</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_limit</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>314</x>
+     <y>965</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_hc_attack</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>383</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_hc_hash</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>383</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>320</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_open_hashfile</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_remove</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>131</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_oclhcplus_hash</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_rulesfile_1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>477</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_open_rulesfile_1</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>236</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhcplus_generate_rules</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>243</x>
+     <y>593</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_async</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>153</x>
+     <y>755</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>424</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_outfile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>683</x>
+     <y>756</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>418</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_outfile</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>596</x>
+     <y>826</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>523</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_oclhcplus_outfile_format</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>636</x>
+     <y>932</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>568</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_devices</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>827</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>86</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhcplus_accel</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>862</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>262</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhcplus_loops</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>897</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>340</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhcplus_segment</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>967</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_mask</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_mask</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>197</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhclite_password_max</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>552</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhclite_password_min</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>465</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_hex_hash</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>419</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_hex_salt</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>450</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_custom1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>62</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_custom1</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_custom2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_custom2</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>236</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_custom3</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>374</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>420</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_custom3</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_custom4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_custom4</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>414</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_outfile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>628</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_outfile</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>541</x>
+     <y>587</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>512</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_oclhclite_outfile_format</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>581</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>557</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_async</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>524</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_devices</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>596</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>599</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhclite_accel</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>631</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>639</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhclite_loops</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>666</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>680</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_oclhclite_hash</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>174</x>
+     <y>175</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>105</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhcplus_watchdog</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>932</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhclite_watchdog</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>701</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>668</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_hash</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_hc_potfile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>673</x>
+     <y>855</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_ignoreusername</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>640</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_oclhcplus_attack</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>25</x>
+     <y>812</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhcplus_password_min</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>566</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_oclhcplus_password_max</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>603</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_mask</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>628</x>
+     <y>509</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_custom1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>478</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>812</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_custom2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>478</x>
+     <y>614</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>812</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_custom3</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>478</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>210</x>
+     <y>812</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_custom4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>478</x>
+     <y>679</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>51</x>
+     <y>812</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_custom1</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>650</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>553</x>
+     <y>812</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_custom2</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>650</x>
+     <y>614</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>490</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_custom3</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>650</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>605</x>
+     <y>629</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_custom4</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>650</x>
+     <y>679</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>665</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_cpu_affinity</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>792</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>703</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_cpu_affinity</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>561</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>535</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_skip_plain</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>627</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>604</x>
+     <y>711</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_limit_plain</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>627</x>
+     <y>386</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>748</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_skip_plain</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>435</x>
+     <y>348</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_limit_plain</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>435</x>
+     <y>382</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_hc_open_rulesfile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>563</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_rulesfile_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>515</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>395</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_open_rulesfile_2</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>517</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>498</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhcplus_open_rulesfile_3</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>555</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>530</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_rulesfile_3</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>453</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_oclhcplus_generate_rules</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>635</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_oclhcplus_use_rules_file</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>443</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>381</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_hex_hash</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>639</x>
+     <y>413</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>601</x>
+     <y>707</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhcplus_hex_salt</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcplusCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>639</x>
+     <y>444</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>743</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_skip</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>627</x>
+     <y>281</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>604</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_limit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>627</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>40</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_skip</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>435</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>509</x>
+     <y>23</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_oclhclite_limit</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>435</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_oclhclite_separator</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>oclhcliteCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_mask</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>442</x>
+     <y>549</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>662</x>
+     <y>546</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_custom1</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>482</x>
+     <y>641</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>658</x>
+     <y>612</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_custom2</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>511</x>
+     <y>671</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>656</x>
+     <y>660</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_custom3</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>425</x>
+     <y>709</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>657</x>
+     <y>700</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_hc_custom4</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>429</x>
+     <y>750</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>662</x>
+     <y>737</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_hc_custom1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>323</x>
+     <y>644</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>658</x>
+     <y>535</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_hc_custom2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>677</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>657</x>
+     <y>729</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_hc_custom3</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>715</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>658</x>
+     <y>807</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_hc_custom4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>751</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>659</x>
+     <y>840</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_password_max</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>687</x>
+     <y>559</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>463</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_hc_password_min</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hcCommandChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>615</x>
+     <y>559</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>498</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>hcCommandChanged()</slot>
+  <slot>oclhcplusCommandChanged()</slot>
+  <slot>oclhcliteCommandChanged()</slot>
+ </slots>
+ <buttongroups>
+  <buttongroup name="buttonGroup_hc_rules"/>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>

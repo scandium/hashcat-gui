@@ -1,0 +1,11 @@
+[Windows]
+Q: When I try to run hashcat-gui I get the following error:
+   "The program can't start because MSVCR100.dll is missing from your computer."
+A: You need to install the "Microsoft Visual C++ 2010 Redistributable Package".
+   32-bit: http://www.microsoft.com/downloads/en/details.aspx?FamilyID=a7b7a05e-6de6-4d3a-a423-37bf0912db84
+   64-bit: http://www.microsoft.com/downloads/en/details.aspx?FamilyID=bd512d9e-43c8-4655-81bf-9350143d5867
+
+Q: I compiled hashcat-gui on Windows x64 but when I start the GUI it immediatly crashes!
+A: There is a bug in VS2010 where code may be miscompiled on x64 if optimizations are turned on.
+   You have to install this hotfix from Microsoft and recompile the application:
+   http://connect.microsoft.com/VisualStudio/Downloads/DownloadDetails.aspx?DownloadID=31433

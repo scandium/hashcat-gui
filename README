@@ -1,0 +1,8 @@
+hashcat-gui is a graphical user interface for the hashcat tools "hashcat",
+"oclHashcat-plus" and "oclHashcat-lite" available at http://hashcat.net/
+
+This project is hosted at https://github.com/scandium/hashcat-gui/
+
+It merely acts as a command line generator and starts the appropriate hashcat
+executable with certain parameters. It does not include any source code from hashcat
+itself or link against any hashcat libraries.

@@ -1,0 +1,44 @@
+hashcat-gui-0.5.1 (25 March 2012)
+	- update to hashcat v0.39
+	- update to oclHashcat-plus v0.071
+	- update to oclHashcat-lite v0.09
+	- use native directory separators (reported by forumhero)
+
+hashcat-gui-0.5.0 (14 January 2012)
+	- update to hashcat v0.38
+	- update to oclHashcat-plus v0.07
+	- update to oclHashcat-lite v0.08
+
+hashcat-gui-0.4.6 (01 November 2011)
+	- oclHashcat: fix --hash-type (reported by HRob1n)
+	- oclHashcat-plus: fix various spelling errors
+
+hashcat-gui-0.4.5 (14 October 2011)
+	- update to oclHashcat-plus v0.06
+	- oclHashcat: fix --outfile and --outfile-format
+	- various minor fixes and cleanups
+
+hashcat-gui-0.4.4 (24 August 2011)
+	- update to oclHashcat v0.26
+
+hashcat-gui-0.4.3 (04 July 2011)
+	- update to hashcat v0.37
+	- update to oclHashcat-plus v0.05
+	- update to oclHashcat-lite v0.06
+	- allow multiple word lists to be removed at once (reported by teamakg)
+	- oclHashcat: fix output file parameter being ignored (reported by 2kv)
+	- add checkbox for each item to word list manager (reported by K9_)
+	- "About" dialog: add artwork (created by Rolf)
+	- add <hash> and <unixtime> variables to output file (reported by drummachina)
+
+hashcat-gui-0.4.2 (24 May 2011)
+	- oclHashcat-plus: fix --segment-size (reported by Rolf)
+
+hashcat-gui-0.4.1 (21 May 2011)
+	- oclHashcat-plus: fix max value for --gpu-accel (reported by pereba)
+	- oclHashcat-plus, oclHashcat-lite: fix --outfile parameter (reported by pereba)
+	- add application icon (reported by pereba)
+	- add file/directory icon to word list manager (reported by atom)
+
+hashcat-gui-0.4 (20 May 2011)
+	- initial release
