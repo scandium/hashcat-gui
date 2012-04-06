@@ -20,6 +20,10 @@ to mostly grow in height instead of width taking up too much vertical screen spa
 - allow terminal to be configurable to allow more than just the currently
 hardcoded terminal
 
+- make the GUI aware of the "configuration" certain attack modes need.
+For example, if an attack needs exactly 2 dictionaries make sure the attack
+can only be started if that requirement is met
+
 - oclHashcat-lite has different maximum password lengths depending on the
 hash type. The GUI should dynamically change the maximum allowed value
 for that field depending on the currently selected hash type.
