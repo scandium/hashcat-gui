@@ -379,12 +379,17 @@ void MainWindow::init_hash_and_attack_modes() {
     oclhcplus_hashModes.insert(1400, "SHA256");
     oclhcplus_hashModes.insert(1500, "descrypt, DES(Unix), Traditional DES");
     oclhcplus_hashModes.insert(1600, "md5apr1, MD5(APR), Apache MD5");
+    oclhcplus_hashModes.insert(1700, "SHA512");
+    oclhcplus_hashModes.insert(1722, "OS X v10.7");
     oclhcplus_hashModes.insert(2100, "Domain Cached Credentials2, mscash2");
     oclhcplus_hashModes.insert(2400, "Cisco-PIX MD5");
     oclhcplus_hashModes.insert(2500, "WPA/WPA2");
+    oclhcplus_hashModes.insert(2600, "Double MD5");
     oclhcplus_hashModes.insert(2611, "vBulletin < v3.8.5");
     oclhcplus_hashModes.insert(2711, "vBulletin > v3.8.5");
-    oclhcplus_hashModes.insert(2811, "IPB 2.0, MyBB 1.2");
+    oclhcplus_hashModes.insert(2811, "IPB2+, MyBB 1.2+");
+    oclhcplus_hashModes.insert(3000, "LM");
+    oclhcplus_hashModes.insert(3100, "Oracle 7-10g, DES(Oracle)");
 
     oclhclite_hashModes.insert(0, "MD5");
     oclhclite_hashModes.insert(10, "md5($pass.$salt)");
