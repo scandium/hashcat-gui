@@ -1,3 +1,6 @@
+hashcat-gui-0.5.2-dev
+	- show scrollbars if necessary
+
 hashcat-gui-0.5.1 (25 March 2012)
 	- update to hashcat v0.39
 	- update to oclHashcat-plus v0.071

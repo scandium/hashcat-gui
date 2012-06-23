@@ -2,9 +2,6 @@ If you implement any of these features please remove it
 from this list and in case it was suggested by someone
 else give proper credit in the ChangeLog file!
 
-- rework layout: over time so many options have been added and the GUI started
-to mostly grow in height instead of width taking up too much vertical screen space
-
 - All file chooser dialogs: save last folder (suggested by boris_)
 
 - remember hardware device choice (suggested by K9_)
